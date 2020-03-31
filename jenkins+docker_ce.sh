@@ -30,3 +30,4 @@ pause 10
 
 docker run hello-world
 
+usermod -a -G docker jenkins
