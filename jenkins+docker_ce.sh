@@ -8,6 +8,8 @@ apt install -y gdebi-core
 wget https://pkg.jenkins.io/debian-stable/binary/jenkins_2.222.1_all.deb
 gdebi ./jenkins_2.222.1_all.deb
 
+# Install docker. 
+
 apt -y install \
     apt-transport-https \
     ca-certificates \
