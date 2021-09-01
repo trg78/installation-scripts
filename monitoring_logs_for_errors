@@ -1,0 +1,7 @@
+#!/bin/bash
+tail -fn0 /var/log/auth.log | while read line ; do
+   echo "${line}" | grep -i "error" > /dev/null
+   if [ $? = 0 ] ; then
+      echo "${line}"
+   fi
+done
