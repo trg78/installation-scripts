@@ -1,0 +1,20 @@
+#Delete all unused packages from mariadb
+apt-get purge mariadb-server
+dpkg --purge mariadb-server-(Your version)
+dpkg --purge mariadb-server-(Your version)
+dpkg --purge mariadb-server-core-10.3(Your version)
+dpkg --purge mariadb-common
+rm -rf /var/lib/mysql/
+rm -rf /etc/mysql/
+rm -rf /var/log/mysql/
+rm -rf /usr/share/mysql
+#Add repo with legacy packages (10.3.27 deprecated and not in the main repo)
+echo 'deb [trusted=yes arch=amd64] https://archive.mariadb.org/mariadb-10.3.27/repo/ubuntu/ bionic main' >> /etc/apt/sources.list.d/mariadb.list
+apt install ca-certificates
+apt update
+#Is 10.3.27 available ?
+apt policy mariadb-server
+#Lets install
+apt install mariadb-client-10.3=1:10.3.27+maria~bionic mariadb-client-core-10.3=1:10.3.27+maria~bionic mariadb-common=1:10.3.27+maria~bionic mariadb-server-core-10.3=1:10.3.27+maria~bionic mysql-common=1:10.3.27+maria~bionic  libmariadb3=1:10.3.27+maria~bionic
+#Check version
+mysql --version
