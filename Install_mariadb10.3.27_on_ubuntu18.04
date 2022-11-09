@@ -16,5 +16,7 @@ apt update
 apt policy mariadb-server
 #Lets install
 apt install mariadb-client-10.3=1:10.3.27+maria~bionic mariadb-client-core-10.3=1:10.3.27+maria~bionic mariadb-common=1:10.3.27+maria~bionic mariadb-server-core-10.3=1:10.3.27+maria~bionic mysql-common=1:10.3.27+maria~bionic  libmariadb3=1:10.3.27+maria~bionic
+apt install mariadb-server-10.3=1:10.3.27+maria~bionic mariadb-client=1:10.3.27+maria~bionic mariadb-backup=1:10.3.27+maria~bionic
+apt-mark hold mariadb-client-10.3 mariadb-client-core-10.3 mariadb-common mariadb-server-core-10.3 mysql-common libmariadb3 mariadb-server-10.3 mariadb-server mariadb-client mariadb-backup
 #Check version
 mysql --version
