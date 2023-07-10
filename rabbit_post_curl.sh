@@ -1,0 +1,2 @@
+curl -4vvv -u user:password 'https://yourhost.host/api/exchanges/%2F/amq.default/publish' -H 'Content-Type: application/json;charset=UTF-8' \
+--data-binary '{"vhost":"/","name":"amq.default","properties":{"delivery_mode":1,"headers":{}},"routing_key":"your_queue_name","delivery_mode":"1","payload":"{\r\n \"Id\": 31,\r\n  \"timestamp\": '"$(date +'%s')"'\r\n}","headers":{},"props":{},"payload_encoding":"string"}'
